@@ -1,0 +1,29 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Database\Factories;
+
+use App\Models\Link;
+use App\Models\User;
+use Heritage\Database\Eloquent\Factories\Factory;
+
+/**
+ * @extends \Heritage\Database\Eloquent\Factories\Factory<\App\Models\UserStatus>
+ */
+class UserStatusFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition(): array
+    {
+        return [
+            'user_id' => User::factory(),
+            'status' => fake()->sentence(),
+            'link_id' => Link::factory(),
+        ];
+    }
+}
